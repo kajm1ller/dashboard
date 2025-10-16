@@ -2,8 +2,6 @@
 
 <html lang="en">
 <body>
-<script src="node_modules/gridstack/dist/gridstack-all.js"></script>
-<link href="node_modules/gridstack/dist/gridstack.min.css" rel="stylesheet"/>
 <style type="text/css">
   .grid-stack { background: #FAFAD2; }
   .grid-stack-item-content { background-color: #18BC9C; }
@@ -12,22 +10,8 @@
   <select id="gateways" name="selectedGateway">
     <option value="3rivers">3Rivers</option>
     <option value="bright.net">bright.net</option>
-    
-
-
-
   </select>
 <div class="grid-stack"></div>
-
-<script type="text/javascript">
-  var items = [
-    {content: 'calix cloud button or something'}, // will default to location (0,0) and 1x1
-    {w: 2, content: 'online status button!'}, // will be placed next at (1,0) and 2x1
-    {w: 3, content: "magical rob chappel button"}
-
-  ];
-  var grid = GridStack.init();
-  grid.load(items);
-</script>
+<script type="module" src="script.ts"></script>
 </body>
 </html>
