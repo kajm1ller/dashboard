@@ -11,19 +11,19 @@ const grid = GridStack.init({
 // Define widgets with their content and properties
 const widgets = [
   {
-    x: 0, y: 0, w: 3, h: 3,
+     w: 3, h: 4.5,
     id: 'widget-ac'
   },
   {
-    x: 3, y: 0, w: 3, h: 3,
+     w: 3, h: 4.5,
     id: 'widget-cc'
   },
   {
-    x: 6, y: 0, w: 2, h: 3,
+     w: 3, h: 4.5,
     id: 'widget-os'
   },
   {
-    x: 8, y: 0, w: 2, h: 3,
+     w: 3, h: 4.5,
     id: 'widget-cpni'
   }
 ];
