@@ -2,16 +2,68 @@
 
 <html lang="en">
 <body>
+<link rel="stylesheet" href="styles.css">
 <style type="text/css">
   .grid-stack { background: #FAFAD2; }
   .grid-stack-item-content { background-color: #18BC9C; }
 </style>
+  <form action="">
+  <label for="uid">User ID</label>
+  <input type="text" id="uid" name="uid"><br>
+  <input type="submit" value="Search">
+  </form>
+
   <label for="gateways">Choose a gateway</label>
   <select id="gateways" name="selectedGateway">
     <option value="3rivers">3Rivers</option>
     <option value="bright.net">bright.net</option>
   </select>
+
+  
 <div class="grid-stack"></div>
-<script type="module" src="script.ts"></script>
-</body>
+<script type="module" src="script.js"></script>
+</body> 
 </html>
+
+<!-- THESE ARE PLACEHOLDERS, THEY NEED TO BE UPDATED DYNAMICALLY
+     AND ADDED AS WIDGETS VIA GRIDSTACK -->
+<div id="ac"><b><h1>Account Info</h1></b>
+  <p1>Account Number: </p1><br>
+  <p1>          Name: </p1><br>
+  <p1>       Address: </p1><br>
+  <p1>  Phone Number: </p1><br>
+  <p1>         Email: </p1><br>
+  <p1>  Service Type: </p1><br>
+  <p1>Account Status: </p1><br>
+
+</div>
+<br>
+
+<div id="cc">
+  <b><h1>Calix Cloud Profile</h1></b>
+  <p1>Online?: </p1><br>
+  <p1>Running Time:</p1><br>
+  <p1>Router Model: </p1><br>
+  <p1>MAC:</p1><br>
+  <p1>Public IP: </p1><br>
+  <button type="button" onclick="">Reboot</button>
+  <button type="button" onclick="">Retrieve Data Logs</button>
+</div>
+
+<div id="os">
+  <b><h1>Online Status / Login History</h1></b>
+  <p1>Current online status:  </p1><br>
+  <p1>Current MAC:            </p1><br>
+  <p1>Last login from history:</p1><br><br>
+  <button type="button" onclick="">More past sessions</button>
+  <button type="button" onclick="">Refresh</button>
+</div>
+
+<div id="cpni">
+  <b><h1>CPNI</h1></b>
+  <p1>Opt-out?</p1><br>
+  <p1>Question 1:</p1><br>
+  <p1>Question 2:</p1><br>
+  <p1>Pin:</p1><br>
+  <p1>CBR:</p1><br>
+</div>
