@@ -83,8 +83,11 @@ function getWidgetContent(widgetType) {
       case "friend":
             return `
         <div class="widget-header">
-          <img src="casey.jpg" alt="mokey" width="470" height="454">
+        <b><h1>Friend</h1></b>
+        <button class="widget-close" onclick="removeWidget(this)">×</button>
         </div>
+          <img src="casey.jpg" alt="mokey" width="470" height="454">
+        
       `;
         default:
             return "<div>Invalid widget type</div>";
