@@ -11,19 +11,19 @@ const grid = GridStack.init({
 
 const widgets = [
   {
-     w: 3, h: 4.5,
+     w: 3, h: 3.1,
     id: 'widget-ac' // ACCOUNT INFO
   },
   {
-     w: 3, h: 4.5,
+     w: 3, h: 3.1,
     id: 'widget-cc' // CALIX CLOUD 
   },
   {
-     w: 3, h: 4.5,
+     w: 3, h: 3.1,
     id: 'widget-os' // ONLINE STATUS
   },
   {
-     w: 3, h: 4.5,
+     w: 3, h: 3.1,
     id: 'widget-cpni' // CPNI
   }
 ];

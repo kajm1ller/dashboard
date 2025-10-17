@@ -5,22 +5,23 @@ h1 {
 }
 
 #ac {
+    resize: auto;
     background-color: gray;
-    height: 20vh;
+    height: auto;
     padding: 10px;
     border-style:solid;
 }
 
 #cc {
     background-color: rgb(192, 255, 255);
-    height: 20vh;
+    height: auto;
     padding: 10px;
     border-style:solid;
 }
 
 #os {
     background-color: blanchedalmond;
-    height: 20vh;
+    height: auto;
     padding: 10px;
     border-style:solid;
 }
