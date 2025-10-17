@@ -1,23 +1,39 @@
 #ac {
     background-color: gray;
-    width:20vw;
-    height:22vh;
+    height: 100%;
+    padding: 10px;
 }
 
 #cc {
-    background-color:rgb(192, 255, 255);
-    width: 20vw;
-    height: 22vh;
+    background-color: rgb(192, 255, 255);
+    height: 100%;
+    padding: 10px;
 }
 
 #os {
-    background-color:blanchedalmond;
-    width: 20vw;
-    height: 22vh;
+    background-color: blanchedalmond;
+    height: 100%;
+    padding: 10px;
 }
 
 #cpni {
-    background-color:honeydew;
-    width: 20vw;
-    height: 18vh;
+    background-color: honeydew;
+    height: 100%;
+    padding: 10px;
+}
+
+/* Make text more readable */
+#ac h1, #cc h1, #os h1, #cpni h1 {
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+#ac p, #cc p, #os p, #cpni p {
+    margin: 5px 0;
+}
+
+button {
+    margin: 5px 5px 5px 0;
+    padding: 5px 10px;
+    cursor: pointer;
 }
