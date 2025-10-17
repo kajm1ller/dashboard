@@ -65,7 +65,7 @@ widgets.forEach(widget => {
   } else if (widget.id === 'widget-os') {
     content.innerHTML = `
       
-        <b><h1>Online Status / Login History</h1></b>
+        <b><h1>Online Status</h1></b>
       <div id="os">
         <p>Current online status: </p>
         <p>Current MAC: </p>

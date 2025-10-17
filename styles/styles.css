@@ -8,24 +8,28 @@ h1 {
     background-color: gray;
     height: 20vh;
     padding: 10px;
+    border-style:solid;
 }
 
 #cc {
     background-color: rgb(192, 255, 255);
     height: 20vh;
     padding: 10px;
+    border-style:solid;
 }
 
 #os {
     background-color: blanchedalmond;
     height: 20vh;
     padding: 10px;
+    border-style:solid;
 }
 
 #cpni {
     background-color: honeydew;
-    height: 20vhs;
+    height: 20vh;
     padding: 10px;
+    border-style:solid;
 }
 
 /* Make text more readable */
