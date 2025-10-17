@@ -91,7 +91,7 @@ h1 {
     flex-shrink: 0;
 }
 
-#ac, #cc, #os, #cpni {
+#ac, #cc, #os, #cpni, #notes {
     padding: 10px;
     border-style: solid;
     flex: 1;
@@ -103,8 +103,15 @@ h1 {
     background-color:rgba(11, 1, 122, 0.573);
 }
 
-
-
+#notes textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    font-size: clamp(0.75em, 1.5vw, 1em);
+    box-sizing: border-box;
+    color: white;
+    background-color:rgb(7, 7, 7);
+}
 #ac p, #cc p, #os p, #cpni p {
     margin: 5px 0;
     font-size: clamp(0.75em, 1.5vw, 1em);
