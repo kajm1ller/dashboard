@@ -1,30 +1,30 @@
-import 'gridstack/dist/gridstack.min.css';
+import '/styles/gridstack.css';
 import { GridStack } from 'gridstack';
 
-// Initialize GridStack
+// INITIALIZE GRIDSTACK
 const grid = GridStack.init({
   float: true,
-  cellHeight: '70px',
+  cellHeight: 'auto',
   minRow: 1
 });
 
-// Define widgets with their content and properties
+
 const widgets = [
   {
      w: 3, h: 4.5,
-    id: 'widget-ac'
+    id: 'widget-ac' // ACCOUNT INFO
   },
   {
      w: 3, h: 4.5,
-    id: 'widget-cc'
+    id: 'widget-cc' // CALIX CLOUD 
   },
   {
      w: 3, h: 4.5,
-    id: 'widget-os'
+    id: 'widget-os' // ONLINE STATUS
   },
   {
      w: 3, h: 4.5,
-    id: 'widget-cpni'
+    id: 'widget-cpni' // CPNI
   }
 ];
 
@@ -36,8 +36,9 @@ widgets.forEach(widget => {
   // BITCHY ASS FIX FOR DISPLAYING WIDGET AS HTML
   if (widget.id === 'widget-ac') {
     content.innerHTML = `
-      <div id="ac">
+      
         <b><h1>Account Info</h1></b>
+      <div id="ac">
         <p>Account Number: </p>
         <p>Name: </p>
         <p>Address: </p>
@@ -49,8 +50,9 @@ widgets.forEach(widget => {
     `;
   } else if (widget.id === 'widget-cc') {
     content.innerHTML = `
-      <div id="cc">
+      
         <b><h1>Calix Cloud Profile</h1></b>
+      <div id="cc">
         <p>Online?: </p>
         <p>Running Time: </p>
         <p>Router Model: </p>
@@ -62,8 +64,9 @@ widgets.forEach(widget => {
     `;
   } else if (widget.id === 'widget-os') {
     content.innerHTML = `
-      <div id="os">
+      
         <b><h1>Online Status / Login History</h1></b>
+      <div id="os">
         <p>Current online status: </p>
         <p>Current MAC: </p>
         <p>Last login from history: </p>
@@ -73,8 +76,9 @@ widgets.forEach(widget => {
     `;
   } else if (widget.id === 'widget-cpni') {
     content.innerHTML = `
-      <div id="cpni">
+      
         <b><h1>CPNI</h1></b>
+      <div id="cpni">
         <p>Opt-out? </p>
         <p>Question 1: </p>
         <p>Question 2: </p>
