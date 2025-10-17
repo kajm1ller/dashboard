@@ -11,18 +11,22 @@
 </head>
 <body>
     <div id="topnav">
+      <div id="leftnav">
+        <div class="input-group">
+          <label for="uid">User ID</label>
+          <input type="text" id="uid" name="uid"> 
+          <input type="submit" onclick="userSearch()" value="Search">
+        </div>
+        <div class="input-group">
+          <label for="gateways">Choose a gateway</label>
+          <select id="gateways" name="selectedGateway">
+            <option value="3rivers">3Rivers</option>
+            <option value="bright.net">bright.net</option>
+          </select>
+        </div>
+      </div>
+      <h1 id="dashboard-title">Troubleshooting Dashboard</h1>
       <div id="rightnav">
-        <label for="uid">User ID</label>
-        <input type="text" id="uid" name="uid"> 
-
-        <input type="submit" onclick="userSearch()" value="Search">
-        <label for="gateways">Choose a gateway</label>
-        <select id="gateways" name="selectedGateway">
-        <option value="3rivers">3Rivers</option>
-        <option value="bright.net">bright.net</option>
-     </select>
-     </div>
-     <div id="leftnav">
         <label for="widget">Add a Widget</label>
         <select id="widget" name="selectedWidget">
           <option value="ac">Account Information</option>
@@ -31,7 +35,7 @@
           <option value="cpni">CPNI</option>
         </select>
         <button type="button" onclick="test()">Add</button>
-     </div>
+      </div>
   </div>
 
 

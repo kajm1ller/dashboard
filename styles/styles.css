@@ -4,18 +4,70 @@ body {
     font-family: Arial, sans-serif;
 }
 
-#topnav{
-    margin:auto;
+#topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
 }
 
-#rightnav{
-    text-align:left;
-    width:20vw;
+#dashboard-title {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    color: black;
+    background: none;
+    font-size: 1.5em;
 }
 
-#leftnav{
-    text-align:right;
-    
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+    margin: 0;
+}
+
+.widget-header h1 {
+    margin: 0;
+    padding: 0;
+    background: none;
+    flex-grow: 1;
+}
+
+.widget-close {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 0 0 0 10px;
+    margin: 0;
+}
+
+.widget-close:hover {
+    color: red;
+}
+
+#leftnav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#rightnav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 
