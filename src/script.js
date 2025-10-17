@@ -1,32 +1,48 @@
 import '/styles/gridstack.css';
 import { GridStack } from 'gridstack';
 
-// INITIALIZE GRIDSTACK
-const grid = GridStack.init({
-  float: true,
-  cellHeight: 'auto',
-  minRow: 1
-});
+function userSearch(){
+  console.log('penis');
+}
 
+function test() {
+  grid.addWidget({content: 'debug'});
+}
+
+
+// INITIALIZE GRIDSTACK with fixed height for vertical resizing
+const grid = GridStack.init({
+  float: true,// Fixed pixel height instead of 'auto' to enable vertical resizing
+  minRow: 1,
+  margin: 5,
+  resizable: {
+    handles: 'e, se, s, sw, w' // Enable all resize handles
+  }
+});
 
 const widgets = [
   {
-     w: 3, h: 3.1,
-    id: 'widget-ac' // ACCOUNT INFO
+    w: 3, h: 4,
+    id: 'widget-ac', // ACCOUNT INFO
+    minW: 2, minH: 3 // Minimum size constraints
   },
   {
-     w: 3, h: 3.1,
-    id: 'widget-cc' // CALIX CLOUD 
+    w: 3, h: 4,
+    id: 'widget-cc', // CALIX CLOUD 
+    minW: 2, minH: 3
   },
   {
-     w: 3, h: 3.1,
-    id: 'widget-os' // ONLINE STATUS
+    w: 3, h: 4,
+    id: 'widget-os', // ONLINE STATUS
+    minW: 2, minH: 3
   },
   {
-     w: 3, h: 3.1,
-    id: 'widget-cpni' // CPNI
+    w: 3, h: 4,
+    id: 'widget-cpni', // CPNI
+    minW: 2, minH: 3
   }
 ];
+
 
 
 widgets.forEach(widget => {
@@ -34,10 +50,10 @@ widgets.forEach(widget => {
   const content = el.querySelector('.grid-stack-item-content');
   
   // BITCHY ASS FIX FOR DISPLAYING WIDGET AS HTML
+
   if (widget.id === 'widget-ac') {
     content.innerHTML = `
-      
-        <b><h1>Account Info</h1></b>
+      <b><h1>Account Info</h1></b>
       <div id="ac">
         <p>Account Number: </p>
         <p>Name: </p>
@@ -50,8 +66,7 @@ widgets.forEach(widget => {
     `;
   } else if (widget.id === 'widget-cc') {
     content.innerHTML = `
-      
-        <b><h1>Calix Cloud Profile</h1></b>
+      <b><h1>Calix Cloud Profile</h1></b>
       <div id="cc">
         <p>Online?: </p>
         <p>Running Time: </p>
@@ -64,8 +79,7 @@ widgets.forEach(widget => {
     `;
   } else if (widget.id === 'widget-os') {
     content.innerHTML = `
-      
-        <b><h1>Online Status</h1></b>
+      <b><h1>Online Status</h1></b>
       <div id="os">
         <p>Current online status: </p>
         <p>Current MAC: </p>
@@ -76,8 +90,7 @@ widgets.forEach(widget => {
     `;
   } else if (widget.id === 'widget-cpni') {
     content.innerHTML = `
-      
-        <b><h1>CPNI</h1></b>
+      <b><h1>CPNI</h1></b>
       <div id="cpni">
         <p>Opt-out? </p>
         <p>Question 1: </p>

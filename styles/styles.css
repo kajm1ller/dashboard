@@ -1,50 +1,133 @@
-h1 {
-    background-color:black;
-    color:white;
+body {
+    margin: 0;
     padding: 10px;
+    font-family: Arial, sans-serif;
+}
+
+#topnav{
+    margin:auto;
+}
+
+#rightnav{
+    text-align:left;
+    width:20vw;
+}
+
+#leftnav{
+    text-align:right;
+    
+}
+
+
+.grid-stack-item-content {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    font-size: clamp(0.9em, 2vw, 1.2em);
+    flex-shrink: 0;
+}
+
+#ac, #cc, #os, #cpni {
+    padding: 10px;
+    border-style: solid;
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
 }
 
 #ac {
-    resize: auto;
     background-color: gray;
-    height: auto;
-    padding: 10px;
-    border-style:solid;
 }
 
 #cc {
     background-color: rgb(192, 255, 255);
-    height: auto;
-    padding: 10px;
-    border-style:solid;
 }
 
 #os {
     background-color: blanchedalmond;
-    height: auto;
-    padding: 10px;
-    border-style:solid;
 }
 
 #cpni {
     background-color: honeydew;
-    height: 20vh;
-    padding: 10px;
-    border-style:solid;
-}
-
-/* Make text more readable */
-#ac h1, #cc h1, #os h1, #cpni h1 {
-    font-size: 1.2em;
-    margin-top: 0;
 }
 
 #ac p, #cc p, #os p, #cpni p {
     margin: 5px 0;
+    font-size: clamp(0.75em, 1.5vw, 1em);
+    word-wrap: break-word;
 }
 
 button {
     margin: 5px 5px 5px 0;
     padding: 5px 10px;
     cursor: pointer;
+    font-size: clamp(0.7em, 1.5vw, 0.9em);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive button container */
+#cc button, #os button {
+    display: inline-block;
+    max-width: 100%;
+}
+
+/* Ensure resize handles are visible */
+.grid-stack-item > .ui-resizable-handle {
+    z-index: 100;
+}
+
+.grid-stack-item > .ui-resizable-se {
+    cursor: se-resize;
+    width: 20px;
+    height: 20px;
+    bottom: 0;
+    right: 0;
+}
+
+.grid-stack-item > .ui-resizable-s {
+    cursor: s-resize;
+    height: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.grid-stack-item > .ui-resizable-e {
+    cursor: e-resize;
+    width: 10px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+/* Make widgets more responsive on smaller sizes */
+.grid-stack-item[gs-w="1"] h1,
+.grid-stack-item[gs-w="2"] h1 {
+    font-size: 0.9em;
+    padding: 5px;
+}
+
+.grid-stack-item[gs-w="1"] p,
+.grid-stack-item[gs-w="2"] p {
+    font-size: 0.75em;
+}
+
+.grid-stack-item[gs-w="1"] button,
+.grid-stack-item[gs-w="2"] button {
+    font-size: 0.7em;
+    padding: 3px 6px;
 }
