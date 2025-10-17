@@ -79,6 +79,13 @@ function getWidgetContent(widgetType) {
           <button type="button" onclick="copyToClipboard()">Copy to clipboard</button>
         </div>
       `;
+
+      case "friend":
+            return `
+        <div class="widget-header">
+          <img src="casey.jpg" alt="mokey" width="470" height="454">
+        </div>
+      `;
         default:
             return "<div>Invalid widget type</div>";
     }
