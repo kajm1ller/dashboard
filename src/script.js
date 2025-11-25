@@ -1,8 +1,8 @@
-import "/styles/gridstack.css";
-import { GridStack } from "gridstack";
+// GridStack is loaded as a global by the UMD bundle included in index.html
+let grid = null;
 
 function userSearch() {
-    console.log("penis");
+  console.log("userSearch triggered");
 }
 
 // Function to get widget HTML content based on widget type
@@ -107,6 +107,11 @@ window.test = function () {
         minH: 3,
     };
 
+    if (!grid) {
+      console.error('Grid not initialized yet.');
+      return;
+    }
+
     // Add the widget to the grid and get the element
     const el = grid.addWidget(widgetConfig);
 
@@ -115,14 +120,43 @@ window.test = function () {
     content.innerHTML = getWidgetContent(selectedWidget);
 };
 
+// Dashboard loading function
+window.loadDashboard = function(role) {
+    // Hide role selection and show dashboard
+    document.getElementById('role-selection').style.display = 'none';
+    document.getElementById('dashboard-container').style.display = 'block';
+    
+    // Set the dashboard title based on role
+    const dashboardTitle = document.getElementById('dashboard-title');
+    dashboardTitle.textContent = role === 'tech' ? 'Tech Dashboard' : 'CS Dashboard';
+}
+
+// Function to go back to role selection
+window.goBack = function() {
+    // Remove all widgets from the grid
+    grid.removeAll();
+    
+    // Hide dashboard and show role selection
+    document.getElementById('dashboard-container').style.display = 'none';
+    document.getElementById('role-selection').style.display = 'flex';
+}
+
 // INITIALIZE GRIDSTACK with fixed height for vertical resizing
-const grid = GridStack.init({
-    float: true, // Fixed pixel height instead of 'auto' to enable vertical resizing
+document.addEventListener('DOMContentLoaded', () => {
+  const GridStackLib = window.GridStack || (typeof GridStack !== 'undefined' && GridStack);
+  if (!GridStackLib) {
+    console.error('GridStack library not found on window. Make sure the UMD script is included before this module.');
+    return;
+  }
+
+  grid = GridStackLib.init({
+    float: true, // allow floating
     minRow: 1,
     margin: 5,
     resizable: {
-        handles: "e, se, s, sw, w", // Enable all resize handles
+      handles: "e, se, s, sw, w",
     },
+  });
 });
 
 // No initial widgets - they will be added by user selection

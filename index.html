@@ -5,47 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="/node_modules/gridstack/dist/gridstack.min.css">
+  <link rel="stylesheet" href="styles/gridstack.css">
   <style type="text/css">
     
   </style>
 </head>
 <body>
-    <div id="topnav">
-      <div id="leftnav">
-        <div class="input-group">
-          <label for="uid">User ID</label>
-          <input type="text" id="uid" name="uid"> 
-          <input type="submit" onclick="userSearch()" value="Search">
+    <div id="role-selection">
+      <h1>Select Your Role</h1>
+      <div class="role-buttons">
+        <button onclick="loadDashboard('tech')" class="role-button">Tech</button>
+        <button onclick="loadDashboard('cs')" class="role-button">Customer Service</button>
+      </div>
+    </div>
+
+    <div id="dashboard-container" style="display: none;">
+      <div id="topnav">
+        <button id="back-button" onclick="goBack()" class="back-button">← Back to Selection</button>
+        <div id="leftnav">
+          <div class="input-group">
+            <label for="uid">User ID</label>
+            <input type="text" id="uid" name="uid"> 
+            <input type="submit" onclick="userSearch()" value="Search">
+          </div>
+          <div class="input-group">
+            <label for="gateways">Choose a gateway</label>
+            <select id="gateways" name="selectedGateway">
+              <option value="3rivers">3Rivers</option>
+              <option value="bright.net">bright.net</option>
+            </select>
+          </div>
         </div>
-        <div class="input-group">
-          <label for="gateways">Choose a gateway</label>
-          <select id="gateways" name="selectedGateway">
-            <option value="3rivers">3Rivers</option>
-            <option value="bright.net">bright.net</option>
+        <h1 id="dashboard-title"></h1>
+        <div id="rightnav">
+          <label for="widget">Add a Widget</label>
+          <select id="widget" name="selectedWidget">thats
+            <option value="ac">Account Information</option>
+            <option value="cc">Calix Cloud</option>
+            <option value="os">Online Status</option>
+            <option value="cpni">CPNI</option>
+            <option value="notes">Notes</option>
+            <option value="friend">Friend</option>
           </select>
+          <button type="button" onclick="test()">Add</button>
         </div>
       </div>
-      <h1 id="dashboard-title">Troubleshooting Dashboard</h1>
-      <div id="rightnav">
-        <label for="widget">Add a Widget</label>
-        <select id="widget" name="selectedWidget">
-          <option value="ac">Account Information</option>
-          <option value="cc">Calix Cloud</option>
-          <option value="os">Online Status</option>
-          <option value="cpni">CPNI</option>
-          <option value="notes">Notes</option>
-          <option value="friend">Friend</option>
-        </select>
-        <button type="button" onclick="test()">Add</button>
+
+      <hr>
+
+      <div class="grid-stack">
+        <!--ALL OF OUR WIDGETS ARE LOADED HERE VIA EXTERNAL JSCRIPT-->
       </div>
-  </div>
-
-  <hr>
-
-  <div class="grid-stack">
-    <!--ALL OF OUR WIDGETS ARE LOADED HERE VIA EXTERNAL JSCRIPT-->
-  </div>
+    </div>
   
+  <script src="/node_modules/gridstack/dist/gridstack-all.js"></script>
   <script type="module" src="src/script.js"></script>
 </body>
 </html>
